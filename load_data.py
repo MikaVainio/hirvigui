@@ -7,7 +7,7 @@ import psycopg2
 
 # Try to establish a connection to the server
 try:
-    dbconnection = psycopg2.connect(database="psycotesti", user="sovellus", password="Q2werty",
+    dbconnection = psycopg2.connect(database="psycotesti", user="sovellus2", password="Q2werty",
                                     host="localhost", port="5432")
 
 
@@ -40,14 +40,16 @@ try:
     records = cursor.fetchall()
     print(records)
     """
+    status = "OK"
 # Handle possible errors using the psycopg2 Error class
 except (Exception, psycopg2.Error) as error:
+    status = "Errors"
     print("Virhe muodostettaess yhteyttä tietokantaan", error)
 
 # Close the connection if estabilished
 finally:
     
-    if (dbconnection):
+    if (status == "OK"):
 
         # Close the cursor
         cursor.close()
