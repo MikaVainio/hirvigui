@@ -69,9 +69,12 @@ class FormWithTable(QMainWindow):
     def activateButton(self):
         self.getDataPushButton.setEnabled(True)
 
-    # A method for find out what item is selected in the table widget and show it on status bar
+    # A method to find out what item is selected in the table widget and show it on the status bar
     def onTableItemClick(self, item):
-        selectionWas = item.text() + " löytyi riviltä " + str(item.row()) + " ja sarkkeesta " + str(item.column())
+        selectedRow = item.row() # The row of the selection
+        selectedColumn = item.column() # The column of the selection
+        idValue = self.tableWidget.item(selectedRow, 0).text() # text value of the id field
+        selectionWas = item.text() + " löytyi riviltä " + str(selectedRow) + " ja piilotettu id on " + str(idValue)
         self.statusBar.showMessage(selectionWas, 5000)
 
     # Create an alert dialog for critical failures eg no database connection established
@@ -155,6 +158,9 @@ class FormWithTable(QMainWindow):
                     # Populate the table named tableWidget in the UI
                     self.tableWidget.setItem(rowIndex, columnIndex, cellData)
 
+                    # Hide the first column (ix is 0)
+                    self.tableWidget.setColumnHidden(0, True)
+                    
                     # Increase columnIndex counter
                     columnIndex += 1
 
