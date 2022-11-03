@@ -35,7 +35,7 @@ class FormWithTable(QMainWindow):
         self.setStatusBar(self.statusBar) # Set it as the statusbar for the main window
         self.statusBar.show()  # Make it visible
 
-        # Disable loading button if table when the Window is created (and nothing has changed in teh UI)
+        # Disable loading button when the Window is created (and nothing has changed in teh UI)
         self.getDataPushButton.setEnabled(False) 
 
         # Define arguments for a connection string to connect the PostgreSQL Server
