@@ -1,4 +1,4 @@
-# EAMPLE MODULE TO FIND DATATYPES OR CLASS MEMBERSHIPS
+# EXAMPLE MODULE TO FIND DATATYPES OR CLASS MEMBERSHIPS
 
 # Libraries and modules needed
 import datetime
@@ -37,7 +37,7 @@ class Rebellian():
         print('May the force be with you!')
 
 
-# Examples of different simple datatypes, remember ip python everything is an object
+# Examples of different simple datatypes, remember in python everything is an object
 quote = 'Luke I am your father'
 print(quote, 'on tyyppiä', type(quote))
 birthday = datetime.date(2000, 11, 7)
