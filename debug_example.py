@@ -11,7 +11,7 @@ class BuggyPerson():
         
     def setAgeGroup(self):
             if self.age < 18:
-                self.ageGroup = 'oppivelvollinen'
+                self.ageGroup = 'Oppivelvollinen'
 
             else:
                 self.ageGroup = 'Ei oppivelvollinen'

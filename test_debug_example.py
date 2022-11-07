@@ -3,18 +3,21 @@
 # Import module to be tested
 import debug_example
 
-# Define a test
-def test_personObject():
+# Define a test for an adult student
+def test_personObject_ei_oppivelvollinen():
 
     # Create an objecto to make tests
-    person1 = debug_example.BuggyPerson('Jakke', 'Jaynä', 33)
-    person1.setAgeGroup() # Call the setAgeGroup method
+    person = debug_example.BuggyPerson('Jakke', 'Jaynä', 33)
+    person.setAgeGroup() # Call the setAgeGroup method
 
-    # Define what should be the correct value for ageGroup property in case of age over 18 years
-    assert person1.ageGroup == 'Ei oppivelvollinen'
+    # Define what should be the correct value for ageGroup property 
+    assert person.ageGroup == 'Ei oppivelvollinen'
 
-    person2 = debug_example.BuggyPerson('Jonne', 'Janttari', 16)
-    person2.setAgeGroup()
+# Define a test for a student under 18 years of age
+def test_personObject_oppivelvollinen():
+    person = debug_example.BuggyPerson('Jonne', 'Janttari', 16)
+    person.setAgeGroup()
 
-    # Define what should be the correct value for ageGroup property in case of age less than 18 years
-    assert person2.ageGroup == 'oppivelvollinen'
+    # Define what should be the correct value for ageGroup property 
+    assert person.ageGroup == 'Oppivelvollinen'
+
