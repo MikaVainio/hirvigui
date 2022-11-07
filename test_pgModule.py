@@ -10,7 +10,7 @@ import datetime # to test result set containing dates
 
 # Database connection settings
 
-# Create a databaseOpration object for connectivity tests
+# Create a databaseOperation object for connectivity tests
 databaseOperation = pgModule.DatabaseOperation()
 
 # Read data from the settings file (test_connectionSettings.dat)
