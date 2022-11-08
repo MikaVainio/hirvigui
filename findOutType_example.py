@@ -38,7 +38,7 @@ class Rebellian():
 
 
 # Examples of different simple datatypes, remember in python everything is an object
-quote = 'Luke I am your father'
+quote = 'Luke, I am your father'
 print(quote, 'on tyyppiä', type(quote))
 birthday = datetime.date(2000, 11, 7)
 print(birthday, "on tyyppiä", type(birthday))
@@ -51,20 +51,20 @@ print('tulosjoukko on tyyppiä', type(dbOperation.resultset))
 
 # Lets create some objects
 darthWader = EvilJedi()
-princessLeya = Rebellian()
+princessLeia = Rebellian()
 
 # Lets chek who belongs to which class
 print('Darth Wader on johdettu luokasta EvilJedi:',
       isinstance(darthWader, EvilJedi))
 print('Hän on myös Jedi-luokan jäsen:',  isinstance(darthWader, Jedi))
-print('Prinsessa Leya johdettu luokasta Jedi tai EvilJedi:',
-      isinstance(princessLeya, (Jedi, EvilJedi)))
-print('Hän kuuluukin Rebellian-luokkaan:', isinstance(princessLeya, Rebellian))
+print('Prinsessa Leia johdettu luokasta Jedi tai EvilJedi:',
+      isinstance(princessLeia, (Jedi, EvilJedi)))
+print('Hän kuuluukin Rebellian-luokkaan:', isinstance(princessLeia, Rebellian))
 
 # Caution! if you ask for multiple classes it is OR not AND
 print('Prinsessa kuuluu kapinallisiin TAI pahiksiin',
-      isinstance(princessLeya, (Rebellian, EvilJedi)))
+      isinstance(princessLeia, (Rebellian, EvilJedi)))
 
 # This checks the AND case
 print('Prinsessa kuuluu kapinallisiin JA pahiksiin', isinstance(
-    princessLeya, Rebellian) and isinstance(princessLeya, EvilJedi))
+    princessLeia, Rebellian) and isinstance(princessLeia, EvilJedi))
