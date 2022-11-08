@@ -50,13 +50,13 @@ print('Luokan virhekoodi on', dbOperation.errorCode, type(dbOperation.errorCode)
 print('tulosjoukko on tyyppiä', type(dbOperation.resultset))
 
 # Lets create some objects
-darthWader = EvilJedi()
+darthVader = EvilJedi()
 princessLeia = Rebellian()
 
 # Lets chek who belongs to which class
-print('Darth Wader on johdettu luokasta EvilJedi:',
-      isinstance(darthWader, EvilJedi))
-print('Hän on myös Jedi-luokan jäsen:',  isinstance(darthWader, Jedi))
+print('Darth Vader on johdettu luokasta EvilJedi:',
+      isinstance(darthVader, EvilJedi))
+print('Hän on myös Jedi-luokan jäsen:',  isinstance(darthVader, Jedi))
 print('Prinsessa Leia johdettu luokasta Jedi tai EvilJedi:',
       isinstance(princessLeia, (Jedi, EvilJedi)))
 print('Hän kuuluukin Rebellian-luokkaan:', isinstance(princessLeia, Rebellian))
