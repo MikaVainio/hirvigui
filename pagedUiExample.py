@@ -1,9 +1,9 @@
-# APPLICATION FOR READING DATA FROM A DATABASE AND SHOWING RESULTS IN A TABLE WIDGET
-# ==================================================================================
+# APPLICATION FOR READING DATA FROM A DATABASE AND SHOWING RESULTS IN A MULTI PAGE TAB WIDGET
+# ===========================================================================================
 
 # LIBRARIES AND MODULES
 # ---------------------
-
+import dialogs # A DIY module containig various dialog windows
 import pgModule  # A home made module to communicate with PostgreSQL server
 import prepareData  # An other home made module for preparing data to be shown in Qt widgets
 import sys  # For possible arguments when creating the application
@@ -43,6 +43,9 @@ class MultiPageWindow(QMainWindow):
         # UI ELEMENTS
         # -----------
 
+        # Actions
+        self.actionServerSettings.triggered.connect(self.openSettingsDialog)
+        
         # The tab widget for browsing UI pages
         self.pages = self.tabWidget
 
@@ -83,6 +86,11 @@ class MultiPageWindow(QMainWindow):
 
     # SLOTS (Methods to call when a signal is emited)
     # ---------------------------------------------
+
+    # Modify and save database settings
+    def openSettingsDialog(self):
+        dialog = dialogs.SaveDBSettingsDialog()
+        dialog.exec()
 
     # Set the default date to today
     def setDefaultDateToday(self):
@@ -207,7 +215,7 @@ class MultiPageWindow(QMainWindow):
         dateOfShot = self.killsShotDE.date() # Get the date in QDate format
         pythonDate = QDate.toPyDate(dateOfShot) # Convert to Python format (ISO)
         shotBy = self.killsShotByCB.currentText() # Get the name of shooter
-        procedureCallParameters = 'Proseduurin parametritn ovat ' + str(pythonDate) + ', ' + shotBy
+        procedureCallParameters = 'Proseduurin parametrit ovat ' + str(pythonDate) + ', ' + shotBy
         self.statusBar.showMessage(procedureCallParameters, 5000)
 
 # CREATE AND RUN THE APPLICATION
