@@ -12,7 +12,7 @@ import pgModule  # For creating and savig the DB settings
 # CLASS DEFINITIONS
 # -----------------
 
-# Create a dummy Main Window because dialog can not be started as standalone objects
+# Create a dummy Main Window because dialogs can not be started as standalone objects
 
 
 class TestMainWindow(QMainWindow):
