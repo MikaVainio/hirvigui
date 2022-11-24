@@ -4,6 +4,8 @@
 # LIBRARIES AND MODULES TO IMPORT
 import sys
 from PyQt5.QtWidgets import *  # TODO: Clean this when finished creating classes
+from PyQt5.QtGui import QDesktopServices # Needed for showing web pages on the default web browser
+from PyQt5.QtCore import QUrl # For defining the URL of web page to show 
 from PyQt5.uic import loadUi  # For loading the UI from a .ui file
 import pgModule  # For creating and savig the DB settings
 
@@ -24,7 +26,10 @@ class TestMainWindow(QMainWindow):
         # Add a dialogs to be tested here and run them as follows:
         saveDBSettings = SaveDBSettingsDialog()
         saveDBSettings.exec()
-
+        
+        # Opens RASEKO's home page in the default browser
+        url = QUrl('https://www.raseko.fi')
+        QDesktopServices.openUrl(url)   
 
 # A class for the dialog to save the database settings
 class SaveDBSettingsDialog(QDialog):
@@ -76,9 +81,9 @@ class SaveDBSettingsDialog(QDialog):
         # Save arguments to a json file
         self.databaseOperation.saveDbSettingsToJsonFile(
             'connectionSettings.dat', newSettings)
-        self.close()
+        self.close()     
 
-
+      
 # Some tests
 if __name__ == "__main__":
 
